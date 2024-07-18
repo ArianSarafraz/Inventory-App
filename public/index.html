@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <style>
+      .komaki {
+        margin-top: 200px;
+        background-color: transparent;
+        width: 200px;
+        height: 100px;
+      }
+      .hidden{
+        display: none;
+      }
+      #category-form-label:hover{
+        cursor: pointer;
+        color: #c1b7b7;
+      }
+      .category-form-container{
+        transition: all 0.3s ease;
+      }
+     
+    </style>
+  </head>
+  <body>
+
+    <div class="bg-slate-800 min-h-screen">
+      <!-- app bar -->
+      <div class="h-12 flex items-center justify-center gap-x-4 bg-slate-700 mb-6">
+        <h1 class="text-xl font-bold text-slate-300">Inventory APP using Js and Tailwind</h1>
+        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2 border-slate-300 font-bold ">7</span>
+      </div>
+      <!-- app content -->
+      <div class="container max-w-screen-sm mx-auto">
+        <!-- category form -->
+        <h2 class="text-xl text-slate-300 font-bold mb-6" id="category-form-label">Add new category ?</h2>
+        <div class="mb-6 category-form-container hidden">
+          <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+           <div>
+            <label class="block mb-1 text-slate-300" for="category-title">title:</label>
+            <input type="text" name="category-title" id="category-title" class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+           </div>
+           <div>
+            <label class="block mb-1 text-slate-300" for="category-description">description:</label>
+            <textarea name="category-description" id="category-description" class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"></textarea>
+           </div>
+           <div class="flex items-center justify-between gap-x-4">
+            <button id="cancel-category-form" class="flex-1 border border-slate-400  text-slate-400 rounded-xl py-2">Cancel</button>
+            <button id="add-new-category" class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2">Add new Category</button>
+           </div>
+
+          </form>
+        </div>
+        <!-- product form -->
+        <div class="mb-6">
+          <h2 class="text-xl text-slate-300 font-bold mb-2">Add new product</h2>
+          <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+           <div>
+            <label class="block mb-1 text-slate-300" for="product-title">title:</label>
+            <input type="text" name="product-title" id="product-title" class="bg-transparent rounded-xl border border-slate-500 text-slate-400">
+           </div>
+           <div>
+            <label class="block mb-1 text-slate-300" for="product-quantity">quantity:</label>
+            <input name="product-quantity" id="product-quantity" class="bg-transparent rounded-xl border border-slate-500 text-slate-400" type="number"></input>
+           </div>
+           <div>
+            <label class="block mb-1 text-slate-300" for="product-category">category:</label>
+            <select name="product-category" id="product-category" class="bg-transparent text-slate-400 rounded-xl w-full">
+              
+            </select>
+           </div>
+           <div class="flex items-center justify-between gap-x-4">
+            <button id="add-new-product" class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2">Add new product</button>
+           </div>
+
+          </form>
+        </div>
+        <!-- product list -->
+        <h2 class="text-xl text-slate-300 font-bold mb-2">Product list</h2>
+        <div class="search-box-container flex items-center justify-between mb-6">
+          <label for="search-input" class="text-slate-400 text-xl">search</label>
+          <input id="search-input" name="search-input" type="text" class="border border-slate-200 border-2 rounded-xl text-slate-400 bg-transparent" placeholder="search products ...">
+        </div>
+        <div class="flex justify-between mb-6">
+          <label for="sort-products" class="text-slate-400 text-xl">sort</label>
+          <select name="sort-products" id="sort-products" class="bg-transparent text-slate-400 rounded-xl border border-2 text-slate-400">
+            <option class="bg-slate-500 text-slate-300" value="">select a category</option>
+            <option class="bg-slate-500 text-slate-300" selected value="latest">latest</option>
+            <option class="bg-slate-500 text-slate-300" value="earliest">earliest</option>
+          </select>
+        </div>
+        <section class="products-list-container">
+          <!-- <div class="mb-3">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-slate-400">React.js</span>
+              <div class="flex items-center gap-x-3">
+                <span class="text-slate-400">date</span>
+                <span class="block px-3 py-0.5 text-slate-400 text-sm border border-slate-500 rounded-2xl">frontend</span>
+                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2 border-slate-300">7</span>  
+                <button class="border px-2 py-0.5 rounded-xl border-red-500 text-red-400">delete</button>   
+              </div>
+               </div>
+          </div> -->
+        </section>
+        <div class="komaki"></div>
+      </div>
+    </div>
+<script src="../src/js/app.js" type="module"></script>
+  </body>
+</html>
